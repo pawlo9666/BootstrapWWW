@@ -2,18 +2,54 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+<script>
+    $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+</script>
 
 <div id="tresc" class="container-fluid" >
 
-    <div class="row">
-        <div  class="col-md-12">
-            <div  class="fotorama"  data-nav="thumbs">
 
-            <img class="img-fluid" src="https://w.wallhaven.cc/full/j5/wallhaven-j5ly95.jpg"/>
-            <img class="img-fluid" src="https://th.wallhaven.cc/lg/j5/j5k825.jpg"/>
-
+            <div id="blueimp-gallery" class="blueimp-gallery">
+                <div class="slides"></div>
+                <h3 class="title"></h3>
+                <a class="prev">‹</a>
+                <a class="next">›</a>
+                <a class="close">×</a>
+                <a class="play-pause"></a>
+                <ol class="indicator"></ol>
             </div>
-        </div>
-    </div>
+
+
+            <div id="links">
+                        <a href="images/1.jpg" title="Banana">
+                            <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Banana" />
+                        </a>
+
+                        <a  href="images/2.jpg" title="Banana">
+                            <img class="img-thumbnail ikonka" src="images/2.jpg" alt="Banana" />
+                        </a>
+
+                        <a href="images/2.jpg" title="Banana">
+                            <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Banana" />
+                        </a>
+            </div>
 
 </div>
+
+    <script src="js/blueimp-gallery.min.js"></script>
+    <script>
+        document.getElementById('links').onclick = function(event) {
+            event = event || window.event
+            var target = event.target || event.srcElement,
+                link = target.src ? target.parentNode : target,
+                options = { index: link, event: event },
+                links = this.getElementsByTagName('a')
+            blueimp.Gallery(links, options)
+        }
+    </script>
+
+</div>
+

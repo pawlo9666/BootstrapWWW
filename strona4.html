@@ -3,12 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/indexstyle.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
 </head>
 <body>
-<div>
-    <button type="button"> Click me </button>
-    <p id="output"> dobry </p>
+
+<div class="main">
+
+    <div id="content">
+        <h1 class="ankieta"> Wypełnij Ankietę </h1>
+
+        <form class="needs-validation formularz" novalidate>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="form-row">
+
+                        <div class="col">
+                            <label for="imie">Imie: </label>
+                        </div>
+                        <div class="col">
+                            <input type="text"  id="imie" class="form-control" placeholder="Imie" required>
+                            <div class="valid-feedback">
+                                Fajne imie!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="nazwisko">Nazwisko: </label>
+                        </div>
+                        <div class="col">
+                            <input type="text" id="nazwisko" class="form-control" placeholder="Nazwisko" required>
+                        </div>
+                    </div>
+                    <div class="row formularz">
+                        <div class="col-md-12"> Wybór płci ma znaczenie <div>
+                    </div>
+
+                    <div class="row czekboksy">
+
+                        <div class="col-md-3"></div>
+                        <div class="col-md-2">
+                            <div class="form-check-inline">
+                                <input class="form-check-input ukryj" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                <label class="form-check-label" for="gridRadios1">
+                                    Kobieta
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input pokaz" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                <label class="form-check-label " for="gridRadios2">
+                                    Mężczyzna
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-check disabled">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                                <label class="form-check-label" for="gridRadios3">
+                                    Inne płci chwilowo nieobsługiwane
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+
+                    <div class="form-group niewidzialny">
+                        <label for="lista">Czy przeszkadza ci kolor różowy na stronie? </label>
+                        <select class="form-control" id="kolor">
+                            <option>Nie</option>
+                            <option>Tak</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="email">Podaj swój adres Email</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@cos.com" required>
+                        <div class="invalid-feedback">
+                            Proszę podać poprawny adres Email
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lista">Jak oceniasz stronę? (W skali od 1-5)</label>
+                        <select class="form-control" id="lista">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="poletekstowe">Chcesz coś dodać?</label>
+                        <textarea class="form-control" id="poletekstowe" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                            <label class="form-check-label" for="invalidCheck2">
+                                Agree to terms and conditions
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" type="submit">Potwierdź </button>
+                    <a href="index.html"><button class="btn btn-primary" type="button"> Powrót do strony głównej</button></a>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
 </div>
+    <footer>
+        <div class="footer-copyright text-center py-3">
+            &copy; 2019 Paweł Skiba. All rights reserved.
+
+        </div>
+    </footer>
 
 </body>
+
+<script>
+
+    $(".niewidzialny").hide();
+
+    $(".nav-link").click(function() {
+        var ten = $(this);
+
+        $("#content").hide(1000, function(){
+
+            $("#content").load(ten.attr("name"));
+        });
+
+
+        $("#content").show(1000, function(){
+        });
+    });
+
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+// Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+
+    $(document).ready(function(){
+
+
+        $(".pokaz").click(function(){
+            $(".niewidzialny").show();
+        });
+
+        $(".ukryj").click(function(){
+            $(".niewidzialny").hide();
+        });
+    });
+
+</script>
+
+
+
 </html>
