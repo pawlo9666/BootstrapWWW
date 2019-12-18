@@ -6,50 +6,31 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/indexstyle.css">
     <link rel="stylesheet" href="css/blueimp-gallery.min.css" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
-
-
-
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
+    <script src="js/jquery-ui.min.js"></script>
 
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
     <div class="main">
 
-        <nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top">
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top" data-spy="affix" data-offset-top="197">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a name="strona1.html" class="nav-link active" href="#">Active</a>
+                <li class="nav-item">
+                    <a name="strona1.html" class="nav-link" href="#section1">Główna</a>
                 </li>
                 <li class="nav-item">
-                    <a name="strona2.html" class="nav-link" href="#">Link</a>
+                    <a name="strona2.html" class="nav-link" href="#section2">O mnie</a>
                 </li>
                 <li class="nav-item">
-                    <a name="strona3.html" class="nav-link" href="#">Link</a>
+                    <a name="strona3.html" class="nav-link" href="#section3">Galeria</a>
                 </li>
                 <li class="nav-item">
-                    <a name="ankieta" class="nav-link" href="strona4.html">Ankieta</a>
+                    <a name="ankieta" class="nav-link" href="strona4.html" title="Powiedz nam coś o sobie">Ankieta</a>
                 </li>
             </ul>
         </nav>
@@ -110,6 +91,8 @@
             </a>
         </div>
 
+
+
         <div id="content" class="strona">
 
         </div>
@@ -118,12 +101,9 @@
 
 
 
-    <footer>
-        <div class="footer-copyright text-center py-3">
-
-            &copy; 2019 Paweł Skiba. All rights reserved.
-
-
+    <footer class="row footer-copyright text-center py-3">
+        <div class="col-md-12">
+            &copy; 2019 Paweł Skiba. All rights reserved
         </div>
     </footer>
 
@@ -135,18 +115,28 @@
     $(".nav-link").click(function() {
         var ten = $(this);
 
-        $("#content").hide(1000, function(){
 
-            $("#content").load(ten.attr("name"));
-         });
+         $("#content").fadeOut(1000, function(){
+            $("#content").empty();
+            $("#content").hide().load(ten.attr("name"));
+          });
+
+        $("#content").show( "drop", 1000 );
 
 
-        $("#content").show(1000, function(){
-        });
     });
 
-</script>
+    $(document).ready(function() {
+            $("#content").load("strona1.html");
+    });
 
+    $( function() {
+        $( document ).tooltip();
+    } );
+
+
+
+</script>
 
 
 </html>
