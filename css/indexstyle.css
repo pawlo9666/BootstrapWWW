@@ -41,13 +41,15 @@
 .footer-copyright {
     background-color: indianred ;
     color: white;
-    position: fixed;
+
     bottom: 0;
     width: 100%;
 }
 
 #content {
     margin-bottom: 2%;
+    height: 1000px;
+    min-height: 1000px;
 
 
 }
@@ -86,8 +88,7 @@
 }
 
 body {
-    background-image: url("../images/wallpaper.jpg");
+    /*background-image: url("../images/wallpaper.jpg");*/
     background-repeat: no-repeat;
-    background-size: cover;
 
 }

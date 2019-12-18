@@ -25,19 +25,19 @@
 
             <div id="links">
                         <a href="images/1.jpg" title="Banana">
-                            <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Banana" />
+                            <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Juri" />
                         </a>
 
                         <a  href="images/2.jpg" title="Banana">
-                            <img class="img-thumbnail ikonka" src="images/2.jpg" alt="Banana" />
+                            <img class="img-thumbnail ikonka" src="images/2.jpg" alt="Chise" />
                         </a>
 
                         <a href="images/2.jpg" title="Banana">
-                            <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Banana" />
+                            <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Dobry" />
                         </a>
             </div>
 
-</div>
+
 
     <script src="js/blueimp-gallery.min.js"></script>
     <script>
@@ -49,7 +49,40 @@
                 links = this.getElementsByTagName('a')
             blueimp.Gallery(links, options)
         }
+
+        $(document).ready(function(){
+            $("img").mouseover(function(){
+                var ten = $(this);
+                $(ten).animate({
+                    height: '150px',
+                    width: '150px',
+                });
+            });
+
+            $("img").mouseout(function(){
+                var ten = $(this);
+                $(ten).animate({
+                    height: '75px',
+                    width: '75px',
+
+                });
+            });
+
+            $("img").click(function(){
+                var ten = $(this);
+                $(ten).animate({
+                    height: '75px',
+                    width: '75px',
+                    opacity: '0.3'
+
+                });
+            });
+
+
+        });
+
     </script>
+
 
 </div>
 
