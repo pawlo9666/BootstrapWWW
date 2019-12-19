@@ -5,6 +5,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/indexstyle.css">
+    <link rel="stylesheet" href="css/slider.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -34,6 +35,28 @@
 
     <div id="content">
         <h1 class="ankieta"> Wypełnij Ankietę </h1>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <img src="images/sliderimg/arrow-right.png" class="next" alt="Next">
+                <img src="images/sliderimg/arrow-left.png" class="prev" alt="Prev">
+
+
+                <div class="container">
+                    <div class="slider-outer">
+
+                        <div class="slider-inner">
+                            <img src="images/sliderimg/image1.jpg" class="active">
+                            <img src="images/sliderimg/image2.jpg">
+                            <img src="images/sliderimg/image3.jpg">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
 
         <form class="needs-validation formularz" novalidate>
             <div class="row">
@@ -141,15 +164,17 @@
                     <a href="index.html"><button class="btn btn-primary" type="button"> Powrót do strony głównej</button></a>
                 </div>
             </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
         </form>
-
-
     </div>
+
 </div>
+
     <footer id="ankietafooter">
         <div class="footer-copyright text-center py-3">
             &copy; 2019 Paweł Skiba. All rights reserved.
-
         </div>
     </footer>
 
@@ -203,7 +228,30 @@
     });
 
 </script>
+<script>
+    $(document).ready(function(){
+        $('.next').on('click', function(){
+            var currentImg = $('.active');
+            var nextImg = currentImg.next();
 
+            if(nextImg.length){
+                currentImg.removeClass('active').css('z-index', -10);
+                nextImg.addClass('active').css('z-index', 10);
+            }
+        });
+
+        $('.prev').on('click', function(){
+            var currentImg = $('.active');
+            var prevImg = currentImg.prev();
+
+            if(prevImg.length){
+                currentImg.removeClass('active').css('z-index', -10);
+                prevImg.addClass('active').css('z-index', 10);
+            }
+        });
+    });
+
+</script>
 
 
 </html>

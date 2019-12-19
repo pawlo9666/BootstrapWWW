@@ -1,7 +1,9 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+
 <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+
 <script>
     $(document).on("click", '[data-toggle="lightbox"]', function(event) {
         event.preventDefault();
@@ -11,76 +13,69 @@
 
 <div id="section3" class="container-fluid" >
 
+    <div class="row">
 
-            <div id="blueimp-gallery" class="blueimp-gallery">
-                <div class="slides"></div>
-                <h3 class="title"></h3>
-                <a class="prev">‹</a>
-                <a class="next">›</a>
-                <a class="close">×</a>
-                <a class="play-pause"></a>
-                <ol class="indicator"></ol>
-            </div>
-
-
+        <div class="col-md-12">
             <div id="links">
-                        <a href="images/1.jpg" title="Banana">
-                            <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Juri" />
-                        </a>
 
-                        <a  href="images/2.jpg" title="Banana">
-                            <img class="img-thumbnail ikonka" src="images/2.jpg" alt="Chise" />
-                        </a>
+                    <a href="images/1.jpg" title="Banana">
+                        <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Juri" />
+                    </a>
 
-                        <a href="images/2.jpg" title="Banana">
-                            <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Dobry" />
-                        </a>
-                <a href="images/1.jpg" title="Banana">
-                    <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Juri" />
-                </a>
+                    <a  href="images/2.jpg" title="Banana">
+                        <img class="img-thumbnail ikonka" src="images/2.jpg" alt="Chise" />
+                    </a>
 
-                <a  href="images/2.jpg" title="Banana">
-                    <img class="img-thumbnail ikonka" src="images/2.jpg" alt="Chise" />
-                </a>
+                    <a href="images/2.jpg" title="Banana">
+                        <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Dobry" />
+                    </a>
+                    <a href="images/1.jpg" title="Banana">
+                        <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Juri" />
+                    </a>
 
-                <a href="images/2.jpg" title="Banana">
-                    <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Dobry" />
-                </a>
-                <a href="images/1.jpg" title="Banana">
-                    <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Juri" />
-                </a>
+                    <a  href="images/2.jpg" title="Banana">
+                        <img class="img-thumbnail ikonka" src="images/2.jpg" alt="Chise" />
+                    </a>
 
-                <a  href="images/2.jpg" title="Banana">
-                    <img class="img-thumbnail ikonka" src="images/2.jpg" alt="Chise" />
-                </a>
+                    <a href="images/2.jpg" title="Banana">
+                        <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Dobry" />
+                    </a>
+                    <a href="images/1.jpg" title="Banana">
+                        <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Juri" />
+                    </a>
 
-                <a href="images/2.jpg" title="Banana">
-                    <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Dobry" />
-                </a>
-                <a href="images/1.jpg" title="Banana">
-                    <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Juri" />
-                </a>
+                    <a  href="images/2.jpg" title="Banana">
+                        <img class="img-thumbnail ikonka" src="images/2.jpg" alt="Chise" />
+                    </a>
 
-                <a  href="images/2.jpg" title="Banana">
-                    <img class="img-thumbnail ikonka" src="images/2.jpg" alt="Chise" />
-                </a>
+                    <a href="images/2.jpg" title="Banana">
+                        <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Dobry" />
+                    </a>
+                    <a href="images/1.jpg" title="Banana">
+                        <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Juri" />
+                    </a>
 
-                <a href="images/2.jpg" title="Banana">
-                    <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Dobry" />
-                </a>
-                <a href="images/1.jpg" title="Banana">
-                    <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Juri" />
-                </a>
+                    <a  href="images/2.jpg" title="Banana">
+                        <img class="img-thumbnail ikonka" src="images/2.jpg" alt="Chise" />
+                    </a>
 
-                <a  href="images/2.jpg" title="Banana">
-                    <img class="img-thumbnail ikonka" src="images/2.jpg" alt="Chise" />
-                </a>
-
-                <a href="images/2.jpg" title="Banana">
-                    <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Dobry" />
-                </a>
+                    <a href="images/2.jpg" title="Banana">
+                        <img class="img-thumbnail ikonka" src="images/1.jpg" alt="Dobry" />
+                    </a>
             </div>
+        </div>
 
+    </div>
+
+    <div id="blueimp-gallery" class="blueimp-gallery">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
 
 
     <script src="js/blueimp-gallery.min.js"></script>
@@ -95,34 +90,28 @@
         }
 
         $(document).ready(function(){
-            $("img").mouseover(function(){
+            $(".ikonka").mouseover(function(){
                 var ten = $(this);
                 $(ten).animate({
                     height: '170px',
                     width: '170px',
                 });
             });
-
-            $("img").mouseout(function(){
+            $(".ikonka").mouseout(function(){
                 var ten = $(this);
                 $(ten).animate({
                     height: '150px',
                     width: '150px',
-
                 });
             });
-
-            $("img").click(function(){
+            $(".ikonka").click(function(){
                 var ten = $(this);
                 $(ten).animate({
                     height: '150px',
                     width: '150px',
                     opacity: '0.3'
-
                 });
             });
-
-
         });
 
     </script>

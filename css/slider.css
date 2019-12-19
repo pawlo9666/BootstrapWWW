@@ -1,0 +1,38 @@
+
+.slider-inner{
+	width: 100%;
+	height: 300px;
+	position:relative;
+	overflow:hidden;
+	float:left;
+	padding:3px;
+	border:#666 solid 1px;
+}
+
+.slider-inner img{
+	display:none;
+	width:100%;
+	height:300px;
+}
+
+.slider-inner img.active{
+	display:inline-block;
+}
+
+.prev,.next{
+
+	cursor: pointer;
+}
+
+.prev{
+	float: left;
+	position:relative;
+	z-index:100;
+}
+
+.next{
+	float:right;
+	position:relative;
+	z-index:100;
+}
+
