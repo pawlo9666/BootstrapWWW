@@ -1,30 +1,65 @@
-<div id="section2" class="container-fluid" >
+<section id="section2" class="container-fluid">
 
-    <div class="row featurette" id="section21">
-        <div class="col-md-7">
-            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-            <img src="https://w.wallhaven.cc/full/13/wallhaven-13oq3v.jpg" class="img-fluid mx-auto d-block" />
-        </div>
-    </div>
+    <section class="row featurette" id="section21">
+        <section class="col-md-7">
+            <h2 class="featurette-heading">Paweł Skiba lat 23 <span class="text-muted">
+                Student na: Uniwersytet Warmińsko-Mazurski w Olsztynie
+                </span></h2>
+            <p class="lead">Obecnie jestem na 3 roku studiów na kierunku Inżyniera systemów Informatycznych. Interesuje
+                się nowymi techonlogiami, tańcem , koszykówką i jazdą na nartach</p>
+        </section>
+        <section class="col-md-5">
+            <section class="row">
+                <section class="col-md-12">
+                    <section class="picture-container">
+                        <img id="picture" class="picture" title="Young Skiba and other gangsters" src="images/picture.png">
+                    </section>
+                </section>
+            </section>
+            <section class="row">
+                <section class="col-md-12">
+                    <a id="try-it" href="#">
+                        <button class="btn-primary">Złap twarze</button>
+                    </a>
+                </section>
+            </section>
+        </section>
 
+
+    </section>
 
     <hr class="featurette-divider">
 
-    <div class="row featurette" id="section22">
-        <div class="col-md-5">
-            <img src="https://w.wallhaven.cc/full/13/wallhaven-13oq3v.jpg" class="img-fluid mx-auto d-block" />
-        </div>
-        <div class="col-md-7">
+</section>
+<script src="js/jquery.facedetection.js"></script>
+<script>
+    /* global $ */
+    $(function () {
+        "use strict";
 
-            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-
-        </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-</div>
+        $('#try-it').click(function (e) {
+            e.preventDefault();
+            $('.face').remove();
+            $('#picture').faceDetection({
+                complete: function (faces) {
+                    for (var i = 0; i < faces.length; i++) {
+                        $('<div>', {
+                            'class': 'face',
+                            'css': {
+                                'position': 'absolute',
+                                'left': faces[i].x * faces[i].scaleX + 'px',
+                                'top': faces[i].y * faces[i].scaleY + 'px',
+                                'width': faces[i].width * faces[i].scaleX + 'px',
+                                'height': faces[i].height * faces[i].scaleY + 'px'
+                            }
+                        })
+                            .insertAfter(this);
+                    }
+                },
+                error: function (code, message) {
+                    alert('Error: ' + message);
+                }
+            });
+        });
+    });
+</script>

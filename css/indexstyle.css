@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -25,7 +28,7 @@
 
 .heder { margin-bottom: 3%;}
 
-.obrazki { padding-bottom: 15%;
+.obrazki {
 }
 
 * { text-align:center; }
@@ -125,3 +128,45 @@ body {
     padding-top: 5%;
 }
 
+.cytat { font-style: italic;}
+
+.odstep{
+    margin-bottom: 4%;
+}
+
+
+
+.picture-container {
+    position: relative;
+    width: 600px;
+    height: auto;
+    margin: 20px auto;
+    border: 10px solid #fff;
+    box-shadow: 0 5px 5px #000;
+}
+.picture {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.face {
+    position: absolute;
+    border: 2px solid #FFF;
+}
+
+.button-visit {
+    display: block;
+    margin: 50px auto;
+    width: 160px;
+    text-transform: uppercase;
+    padding: 20px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font: 0.8em Arial, sans-serif;
+}
+.button-visit:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
