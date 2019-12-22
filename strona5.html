@@ -21,7 +21,7 @@
         <p>Jeżeli jakiś obrazek należący do Ciebie, został wstawiony wbrew w twojej woli proszę o kontakt pod ten mail</p>
         <table class="table table-dark table-hover">
             <thead>
-            <tr>
+            <tr class="naglowek">
                 <th>Nazwa Obrazka</th>
                 <th>źródło</th>
                 <th>Link</th>
@@ -48,6 +48,12 @@
                 <td>oboi</td>
                 <td> <a href="http://oboi.cc"> http://oboi.cc </a></td>
             </tr>
+            <tr class="moje">
+                <td>Zdjęcia</td>
+                <td>Autorskie</td>
+                <td> <a href="#"> Nie mam strony :( </a></td>
+            </tr>
+
             </tbody>
         </table>
     </div>
@@ -55,5 +61,25 @@
     <hr class="featurette-divider">
 </section>
 
+<script>
+    $(document).ready(function() {
+
+        $(".moje").hide();
+
+    });
+
+    $(".naglowek").mouseover(function(){
+
+        $(".moje").show( "drop", 1 );
+
+        });
+
+    $(".naglowek").mouseout(function(){
+
+        $(".moje").hide();
+
+        });
+
+</script>
 
 
